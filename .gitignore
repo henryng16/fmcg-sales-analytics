@@ -24,4 +24,4 @@ Thumbs.db
 # Claude Code (local settings and memory — machine-specific, may contain sensitive context)
 .claude/
 .vscode/
-CLAUDE.md
+CLAUDE.mdlogs/

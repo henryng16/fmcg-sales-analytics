@@ -1,0 +1,29 @@
+# _sources.yml tells dbt where our raw data lives.
+#
+# WHY: Instead of hardcoding "raw.sales" in every model,
+# we define it once here. Then models use {{ source('raw', 'sales') }}.
+# If the source table ever moves or renames, we update ONE file.
+#
+# PRINCIPLE: Single source of truth (DRY — Don't Repeat Yourself)
+
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data loaded from CSV files — untransformed"
+    schema: raw
+    tables:
+      - name: categories
+        description: "Product category definitions"
+      - name: cities
+        description: "City geography and postal codes"
+      - name: countries
+        description: "Country reference data"
+      - name: customers
+        description: "Customer profiles and addresses"
+      - name: employees
+        description: "Sales staff information"
+      - name: products
+        description: "Product master data — pricing, classification, shelf life"
+      - name: sales
+        description: "Transaction logs — 6.76M rows, 4 months of data"
